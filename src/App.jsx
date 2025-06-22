@@ -1,13 +1,11 @@
 import { useState } from 'react'
-import './App.css'
-
+import PasswordInput from './components/PasswordInput'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+    <PasswordInput/>
     </>
   )
 }
