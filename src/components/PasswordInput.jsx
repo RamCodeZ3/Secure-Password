@@ -1,14 +1,42 @@
+import { useState } from "react";
+
+
 function PasswordInput() {
-  
-  function hardleInput(event){
-    let score = 0;
-    let password = event.target.value
-    if (password.length >= 8) score++ // Verifica si hay más o igual de 8 caracteres
-    if (password.length >= 12) score++ // Verifica si hay más o igual de 12 caracteres 
-    if (/[A-Z]/.test(password)) score++ // Verifica si tiene mayusculas
-    if (/[a-z]/.test(password)) score++ // Verifica si tiene minusculas
-    if (/[^a-zA-Z0-9]/.test(password)) score++  // Verifica si tiene caracteres especiales
-    if (/[0-9]/.test(password)) score++ // Verifica si tiene algun numero 
+  const [score, setScore] = useState(0)
+  const [password, setPassword] = useState('')
+  const [requirements, setRequirements] = useState({
+    Characters_a_z: false,
+    Characters_A_Z: false,
+    Special_Characters: false,
+    num: false,
+    Character_lengths_8: false,
+    Character_lengths_12: false,
+  })
+
+  function handleInput(event){
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+
+    // Evaluar todos los requisitos
+    const newRequirements = {
+      Character_lengths_8: newPassword.length >= 8,
+      Character_lengths_12: newPassword.length >= 12,
+      Characters_A_Z: /[A-Z]/.test(newPassword),
+      Characters_a_z: /[a-z]/.test(newPassword),
+      num: /[0-9]/.test(newPassword),
+      Special_Characters: /[^a-zA-Z0-9]/.test(newPassword),
+    };
+
+    // Calcular el nuevo puntaje
+    let newScore = 0;
+    Object.values(newRequirements).forEach((met) => {
+      if (met) newScore += 100 / 6; // Hay 6 requisitos
+    });
+
+    // Actualizar los estados
+    setRequirements(newRequirements);
+    setScore(newScore);
+    
     console.log(score)
   }
   
@@ -18,7 +46,7 @@ function PasswordInput() {
       <h3>Introduce tu contraseña</h3>
       <input 
          type="password" 
-         onChange={hardleInput}>
+         onChange={handleInput}>
          </input>
     </div>
     </>
