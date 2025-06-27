@@ -1,29 +1,35 @@
 import PasswordInput from "./PasswordInput";
 
-const ProgressBar = ({ percentage }) => {
-  const strokeWidth = 8; // Ancho del borde de la barra de progreso
-  const radius = 50 - strokeWidth / 2; // Radio del círculo menos la mitad del ancho del borde
-  const circumference = 2 * Math.PI * radius; // Circunferencia del círculo
-
-  const offset = circumference - (percentage / 100) * circumference;
+function ProgressBar({progress}) {
+  const strokeWidth = 8;
+  const radius = 50 - strokeWidth / 2;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference * (1 - progress / 100);
 
   return (
-    <svg className="w-16 h-16">
+    <svg width="100" height="100" viewBox="0 0 100 100">
       <circle
-        className="text-blue-500 stroke-current"
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        fill="transparent"
         r={radius}
         cx="50"
         cy="50"
-        style={{
-          strokeDasharray: circumference,
-          strokeDashoffset: offset,
-        }}
+        fill="transparent"
+        stroke="#e5e7eb" // gris claro para fondo (Tailwind gray-200)
+        strokeWidth={strokeWidth}
+      />
+      <circle
+        r={radius}
+        cx="50"
+        cy="50"
+        fill="transparent"
+        stroke="#3b82f6" // azul (Tailwind blue-500)
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeDasharray={circumference}
+        strokeDashoffset={offset}
+        transform="rotate(-90 50 50)" // para que empiece desde arriba
       />
     </svg>
   );
-};
+}
 
 export default ProgressBar;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Progress from './Progress'
 
 function PasswordInput() {
   const [score, setScore] = useState(0)
@@ -37,7 +37,7 @@ function PasswordInput() {
     setRequirements(newRequirements);
     setScore(newScore);
     
-    console.log(score)
+    console.log(newScore)
   }
   
   return (
@@ -49,6 +49,7 @@ function PasswordInput() {
          onChange={handleInput}>
          </input>
     </div>
+    <Progress progress={score}/>
     </>
   )
   }
