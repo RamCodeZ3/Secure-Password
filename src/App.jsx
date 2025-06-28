@@ -1,11 +1,17 @@
 import { useState } from 'react'
 import PasswordInput from './components/PasswordInput'
+import Header from './components/Header'
 
 
 function App() {
   return (
     <>
-    <PasswordInput/>
+    <div className='font-inter'>
+      <Header/>
+      <div>
+        <PasswordInput/>
+      </div>
+    </div>
     </>
   )
 }
