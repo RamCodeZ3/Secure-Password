@@ -1,5 +1,3 @@
-import PasswordInput from "./PasswordInput";
-
 function ProgressBar({progress}) {
   const strokeWidth = 8;
   const radius = 50 - strokeWidth / 2;
@@ -9,8 +7,8 @@ function ProgressBar({progress}) {
 
   return (
     <>
-    <div className="flex relative justify-center items-center bg-[#212121] px-12 py-10 rounded-lg">
-      <svg width="160" height="160" viewBox="0 0 100 100">
+    <div className="flex relative justify-center items-center bg-[#212121] px-8 py-6 rounded-lg">
+      <svg width="100" height="100" viewBox="0 0 100 100">
       <circle
         r={radius}
         cx="50"
@@ -32,7 +30,7 @@ function ProgressBar({progress}) {
         transform="rotate(-90 50 50)" // para que empiece desde arriba
       />
     </svg>
-    <b className={`absolute z-100 text-3xl text-[${textColor}]`}>{Math.round(progress)}%</b>
+    <b className={`absolute z-100 text-2xl text-[${textColor}]`}>{Math.round(progress)}%</b>
     </div>
     </>
   );
