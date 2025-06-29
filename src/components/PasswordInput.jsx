@@ -43,7 +43,7 @@ function PasswordInput() {
   return (
     <>
     <div className="flex gap-4">
-       <div className="flex flex-col gap-10 justify-center items-center py-12 bg-[#212121] w-3/12 rounded-lg p-7 text-[#00774D]">
+       <div className="flex flex-col gap-10 justify-center items-center px-16 py-12 bg-[#212121] rounded-lg p-7 text-[#00774D]">
          <b className="text-2xl">Introduce tu contraseña</b>
          <input
            className="bg-[#16221E] b-[#00774D] border-2 rounded-md py-1.5 px-2 w-full"
