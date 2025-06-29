@@ -3,7 +3,7 @@ function ProgressBar({progress}) {
   const radius = 50 - strokeWidth / 2;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference * (1 - progress / 100);
-  const textColor = progress === 0 ? "#1D312A" : "#00774D";
+  const textColor = progress <= 0 ? "#1D312A" : "#00774D";
 
   return (
     <>
@@ -30,7 +30,7 @@ function ProgressBar({progress}) {
         transform="rotate(-90 50 50)" // para que empiece desde arriba
       />
     </svg>
-    <b className={`absolute z-100 text-2xl text-[${textColor}]`}>{Math.round(progress)}%</b>
+    <b className="absolute z-100 text-2xl" style={{ color: textColor }}>{Math.round(progress)}%</b>
     </div>
     </>
   );

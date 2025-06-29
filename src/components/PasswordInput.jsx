@@ -37,7 +37,6 @@ function PasswordInput() {
     setRequirements(newRequirements);
     setScore(newScore);
     
-    console.log(newScore)
   }
   
   return (
