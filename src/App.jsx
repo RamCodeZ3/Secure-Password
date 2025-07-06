@@ -4,6 +4,7 @@ import Header from './components/Header'
 import PasswordGenerator from './components/PasswordGenerator'
 import Title from './components/Title'
 import Title2 from './components/Title2'
+import Habits from './components/Habits'
 
 
 function App() {
@@ -22,8 +23,11 @@ function App() {
         </div>
       </div>
     </div>
-    <div>
+    <div className='flex justify-center items-center py-10'>
       <Title2/>
+    </div>
+    <div className='flex justify-center items-center bg-[#00774d23] w-full p-10'>
+      <Habits/>
     </div>
     </main>
     </>

@@ -30,7 +30,7 @@ function ProgressBar({progress}) {
         transform="rotate(-90 50 50)" // para que empiece desde arriba
       />
     </svg>
-    <b className="absolute z-100 text-2xl" style={{ color: textColor }}>{Math.round(progress)}%</b>
+    <b className="absolute z-2 text-2xl" style={{ color: textColor }}>{Math.round(progress)}%</b>
     </div>
     </>
   );
