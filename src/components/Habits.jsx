@@ -6,7 +6,7 @@ function Habits() {
         <div className="flex text-center w-full py-4 justify-center">
             <b className="text-2xl">Buenos hábitos</b>
         </div>
-        <ul className="list-disc space-y-4">
+        <ul className="list-disc space-y-4 ml-4">
           <li>Usa 12 caracteres o más.</li>
           <li>Combina mayúsculas, minúsculas, números y símbolos.</li>
           <li>Usa una contraseña única para cada sitio.</li>
@@ -18,7 +18,7 @@ function Habits() {
         <div className="text-center w-full py-4">
             <b className="text-2xl">Malos hábitos</b>
         </div>
-        <ul className="list-disc space-y-4">
+        <ul className="list-disc space-y-4 ml-4">
           <li>Usar contraseñas cortas o muy simples.</li>
           <li>Incluir datos personales como tu nombre, cumpleaños o teléfono.</li>
           <li>Reutilizar la misma contraseña en varios sitios.</li>
